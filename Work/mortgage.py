@@ -16,14 +16,14 @@ while principal > 0:
         principal = principal * (1+rate/12) - payment - extra_payment
         total_paid += payment + extra_payment
         months += 1
-        print(months, round(total_paid, 2), round(principal, 2))
+        print(f'Nach {months} Monaten wurde €{total_paid:0.2f} bezahlt und es verbleibt €{principal:0.2f} zu zahlen')
     principal = principal*(1+rate/12)-payment
     total_paid += payment
     months += 1
     if principal < 0:
         total_paid += principal
         principal = 0
-    print(months, round(total_paid, 2), round(principal, 2))
+    print(f'Nach {months} Monaten wurde €{total_paid:0.2f} bezahlt und es verbleibt €{principal:0.2f} zu zahlen')
 
-print('Total paid:', round(total_paid, 2))
-print('Total months:', months)
+print(f'Gesamtbetrag: €{total_paid:0.2f}')
+print(f'Gesamtdauer:  {months} Monate')
